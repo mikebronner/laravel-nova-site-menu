@@ -19,6 +19,7 @@ class Service extends ServiceProvider
         // ]);
         Blade::component('menu', Menu::class);
         Blade::component('menu-item', MenuItem::class);
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'laravel-nova-site-menu');
 
         if (! Page::ignoreMigrations()) {
             $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');

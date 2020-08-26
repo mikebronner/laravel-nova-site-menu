@@ -2,8 +2,8 @@
 
     @foreach ($menuItems as $menuItem)
         <x-menu-item
-            :model="$menuItem"
+            :menuItem="$menuItem"
         />
-    @endif
+    @endforeach
 
 </div>

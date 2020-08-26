@@ -9,7 +9,7 @@ use Illuminate\View\View;
 class MenuItem extends Component
 {
     public $url;
-    public $classes;
+    public $class;
     public $description;
     public $navigationLabel;
     public $target;
@@ -18,14 +18,14 @@ class MenuItem extends Component
     public function __construct(MenuItemModel $menuItem)
     {
         $this->url = $menuItem->url;
-        $this->classes = $menuItem->classes;
+        $this->class = $menuItem->classes;
         $this->description = $menuItem->description;
         $this->navigationLabel = $menuItem->navigation_label;
         $this->target = $menuItem->target;
         $this->titleAttribute = $menuItem->title_attribute;
 
         if ($this->url === request()->url()) {
-            $this->classes = $menuItem->active_classes;
+            $this->class = $menuItem->active_classes;
         }
     }
 

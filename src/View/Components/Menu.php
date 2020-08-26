@@ -7,17 +7,20 @@ use Illuminate\View\Component;
 
 class Menu extends Component
 {
-    protected $menuItems;
+    public $class;
+    public $menuItems;
 
     public function __construct(string $name)
     {
-        $this->menuItems = (new MenuModel)
+        $menuClass = MenuModel::model();
+        $menu = (new $menuClass)
             ->with("menuItems.children")
             ->where("name", $name)
-            ->first()
-            ->menuItems()
+            ->first();
+        $this->menuItems = $menu->menuItems()
             ->ordered()
             ->get();
+        $this->class = $menu->class;
     }
 
     public function render()
