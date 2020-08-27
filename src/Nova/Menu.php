@@ -18,11 +18,6 @@ class Menu extends NovaResource
         'name',
     ];
 
-    // public static function label()
-    // {
-    //     return "Custom Pages";
-    // }
-
     public function fields(Request $request)
     {
         return [
@@ -31,12 +26,12 @@ class Menu extends NovaResource
             Text::make("Name")
                 ->sortable()
                 ->rules("required"),
-            HasMany::make("Menu Items", "menuItems", MenuItem::class)
-                ->hideFromIndex(),
             DateTime::make("Created At")
                 ->onlyOnDetail(),
             DateTime::make("Updated At")
                 ->onlyOnDetail(),
+            HasMany::make("Menu Items", "menuItems", MenuItem::class)
+                ->hideFromIndex(),
         ];
     }
 }

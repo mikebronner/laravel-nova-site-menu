@@ -14,8 +14,6 @@ class CreateMenuItemsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->string("active_classes")->nullable();
-            $table->string("classes")->nullable();
             $table->string("description")->nullable();
             $table->string("navigation_label");
             $table->unsignedSmallInteger("position")->nullable();

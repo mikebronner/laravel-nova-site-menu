@@ -5,7 +5,4 @@
     title="{{ $titleAttribute }}"
 >
     {{ $navigationLabel }}
-    <span class="block">
-        {{ $description }}
-    </span>
 </a>

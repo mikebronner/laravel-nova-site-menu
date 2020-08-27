@@ -3,6 +3,7 @@
 namespace GeneaLabs\LaravelNovaSiteMenu\View\Components;
 
 use GeneaLabs\LaravelNovaSiteMenu\MenuItem as MenuItemModel;
+use Illuminate\Support\Str;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
@@ -10,22 +11,26 @@ class MenuItem extends Component
 {
     public $url;
     public $class;
+    public $activeClass;
     public $description;
     public $navigationLabel;
     public $target;
     public $titleAttribute;
 
-    public function __construct(MenuItemModel $menuItem)
-    {
-        $this->url = $menuItem->url;
-        $this->class = $menuItem->classes;
+    public function __construct(
+        MenuItemModel $menuItem,
+        string $class = "",
+        string $activeClass = ""
+    ) {
+        $this->url = url($menuItem->url);
+        $this->class = $class;
         $this->description = $menuItem->description;
         $this->navigationLabel = $menuItem->navigation_label;
         $this->target = $menuItem->target;
         $this->titleAttribute = $menuItem->title_attribute;
 
-        if ($this->url === request()->url()) {
-            $this->class = $menuItem->active_classes;
+        if (Str::startsWith(request()->url(), $this->url)) {
+            $this->class = $activeClass;
         }
     }
 

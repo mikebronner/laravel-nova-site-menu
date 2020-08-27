@@ -8,19 +8,32 @@ use Illuminate\View\Component;
 class Menu extends Component
 {
     public $class;
+    public $itemClass;
+    public $itemActiveClass;
     public $menuItems;
 
-    public function __construct(string $name)
-    {
+    public function __construct(
+        string $name,
+        string $class = "",
+        string $itemClass = "",
+        string $itemActiveClass = ""
+    ) {
         $menuClass = MenuModel::model();
         $menu = (new $menuClass)
             ->with("menuItems.children")
             ->where("name", $name)
             ->first();
-        $this->menuItems = $menu->menuItems()
-            ->ordered()
-            ->get();
-        $this->class = $menu->class;
+        $this->menuItems = collect();
+
+        if ($menu) {
+            $this->menuItems = $menu->menuItems()
+                ->ordered()
+                ->get();
+        }
+
+        $this->class = $class;
+        $this->itemClass = $itemClass;
+        $this->itemActiveClass = $itemActiveClass;
     }
 
     public function render()

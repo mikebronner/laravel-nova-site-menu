@@ -64,10 +64,6 @@ class MenuItem extends Resource
                     return "_self";
                 }),
 
-            Text::make('Classes'),
-
-            Text::make('Active Classes'),
-
             HasMany::make("Sub-Menu Items", "children", self::class)
                 ->sortable(),
         ];
