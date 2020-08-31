@@ -4,6 +4,7 @@ namespace GeneaLabs\LaravelNovaSiteMenu\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use GeneaLabs\LaravelNovaSiteMenu\Menu as MenuModel;
 use GeneaLabs\LaravelNovaSiteMenu\View\Components\Menu;
 use GeneaLabs\LaravelNovaSiteMenu\View\Components\MenuItem;
 
@@ -20,7 +21,7 @@ class Service extends ServiceProvider
         Blade::component('menu-item', MenuItem::class);
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'laravel-nova-site-menu');
 
-        if (! Menu::ignoreMigrations()) {
+        if (! MenuModel::ignoreMigrations()) {
             $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
         }
 
