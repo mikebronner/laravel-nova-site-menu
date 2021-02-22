@@ -20,7 +20,7 @@
         "genealabs/laravel-overridable-model": "0.1.0",
         "illuminate/support": "^8.0",
         "laravel/nova": "^3.9",
-        "optimistdigital/nova-sortable": "^1.4",
+        "optimistdigital/nova-sortable": "^2.1",
         "symfony/thanks": "^1.2"
     },
     "autoload": {
