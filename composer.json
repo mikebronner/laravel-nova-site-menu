@@ -17,10 +17,10 @@
         }
     ],
     "require": {
-        "genealabs/laravel-overridable-model": "0.1.0",
-        "illuminate/support": "^8.0",
+        "genealabs/laravel-overridable-model": "*",
+        "illuminate/support": "^9.0",
         "laravel/nova": "^3.9",
-        "optimistdigital/nova-sortable": "^2.1",
+        "optimistdigital/nova-sortable": "*",
         "symfony/thanks": "^1.2"
     },
     "autoload": {
