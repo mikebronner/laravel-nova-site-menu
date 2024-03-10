@@ -18,8 +18,8 @@
     ],
     "require": {
         "genealabs/laravel-overridable-model": "*",
-        "illuminate/support": "^9.0",
-        "laravel/nova": "^3.9",
+        "illuminate/support": "^10.0",
+        "laravel/nova": "^4.0",
         "optimistdigital/nova-sortable": "*",
         "symfony/thanks": "^1.2"
     },
