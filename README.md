@@ -1,6 +1,15 @@
 # Pages for Laravel and Nova
 Drop-in functionality for site menus in Laravel and Nova.
 
+## Version Support
+
+| PHP | Laravel | Nova |
+|-----|---------|------|
+| 8.5 | 10–12  | 4–5  |
+| 8.4 | 10–12  | 4–5  |
+| 8.3 | 10–12  | 4–5  |
+| 8.2 | 10–12  | 4–5  |
+
 ## Installation & Customization
 ### Standard
 If you are creating a simple app, these two steps should suffice. However, if
